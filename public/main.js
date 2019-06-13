@@ -12,5 +12,5 @@ document.body.onload = () => {
 const submit = prefix => e => {
   e.preventDefault();
   const url = e.target.url.value;
-  window.location = prefix + url;
+  window.open(prefix + url, "_blank");
 };

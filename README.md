@@ -7,7 +7,7 @@ A web API for easily screenshotting web pages.
 
 ## Demo
 
-[![screenshot](https://jist-screenshotter.herokuapp.com/https://jist-screenshotter.herokuapp.com/)](https://jist-screenshotter.herokuapp.com/)
+[![screenshot loading / heroku app waking up...](https://jist-screenshotter.herokuapp.com/https://jist-screenshotter.herokuapp.com/)](https://jist-screenshotter.herokuapp.com/)
 
 - This screenshot is automatically **live-generated** using the API. Meta!
 
@@ -32,7 +32,9 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 - autocomplete forms off
 - refactor routes
-- save pngs to s3?
+- add version to API routes
+- markdown/html embed copypasta on preview page
+- save pngs to s3/imgur/etc.?
 - compress screenshots?
 - api route (returns json)
 - save by time
