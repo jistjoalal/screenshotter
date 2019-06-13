@@ -10,3 +10,4 @@ A web API for easily screenshotting web pages.
   - archive like wayback machine
 - pass params to puppeteer
   - page size, device, etc.
+- look into nest.js

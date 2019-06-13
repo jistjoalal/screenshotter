@@ -3,7 +3,3 @@
 
 # screenshots dir
 /shots
-
-# Elastic Beanstalk
-/.elasticbeanstalk/*
-/.ebextensions
