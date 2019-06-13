@@ -21,7 +21,7 @@ A web API for easily screenshotting web pages.
 git clone https://github.com/jistjoalal/screenshotter
 cd screenshotter
 npm install
-npm start
+npm run develop
 ```
 
 ## Deploy
@@ -32,6 +32,8 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 - autocomplete forms off
 - refactor routes
+- save pngs to s3?
+- compress screenshots?
 - api route (returns json)
 - save by time
   - archive like wayback machine
