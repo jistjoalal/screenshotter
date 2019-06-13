@@ -15,6 +15,7 @@ app.use(express.static(__dirname + "/public"));
 
 // routes
 const routes = require("./routes");
+app.use("/v1", routes);
 app.use("/", routes);
 
 // root

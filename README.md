@@ -15,6 +15,12 @@ A web API for easily screenshotting web pages.
 ![screenshot](https://jist-screenshotter.herokuapp.com/https://jist-screenshotter.herokuapp.com/)
 ```
 
+- Don't want me screwing up your links? Use the versioned API in case I make breaking changes:
+
+```
+https://jist-screenshotter.herokuapp.com/v1/
+```
+
 ## Develop
 
 ```bash
@@ -30,7 +36,6 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos
 
-- add version to API routes
 - markdown/html embed copypasta on preview page
 - api route (returns json)
 - save by time
@@ -41,11 +46,3 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 - compress screenshots?
 - look into nest.js?
 - Kaffeine to keep heroku app online?
-
-## learning
-
-Deploying was a pain. Working on heroku w/ the following tricks:
-
-- [Buildpacks, puppeteer config](https://stackoverflow.com/a/55090914)
-- Ensure screenshots folder exists before writing
-  - Can't commit empty dir to git, had to be manual
