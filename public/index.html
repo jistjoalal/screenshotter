@@ -5,8 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Screenshotter</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
+
   <body>
-    <h1>Screenshotter</h1>
+    <header>
+      <div class="title">
+        <a href="/">
+          <h1>Screenshotter</h1>
+        </a>
+        <p>Dead-simple web page screenshotting.</p>
+      </div>
+    </header>
+
+    <main>
+      <h2>Desktop Screenshot</h2>
+      <code>/:url</code>
+      <form id="desktop">
+        <input type="url" name="url" placeholder="URL" />
+        <button type="submit">Generate</button>
+      </form>
+
+      <h2>Mobile Screenshot</h2>
+      <code>/mobile/:url</code>
+      <form id="mobile">
+        <input type="url" name="url" placeholder="URL" />
+        <button type="submit">Generate</button>
+      </form>
+
+      <h2>Screenshot Previews</h2>
+      <code>/previews/:url</code>
+      <form id="previews">
+        <input type="url" name="url" placeholder="URL" />
+        <button type="submit">Generate</button>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
   </body>
 </html>

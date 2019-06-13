@@ -6,7 +6,7 @@ const { previews } = require("./previews");
 
 const urlRegEx = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
 
-router.get("/preview/*", async (req, res) => {
+router.get("/previews/*", async (req, res) => {
   // url param
   const url = req.params[0];
 
