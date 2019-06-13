@@ -10,6 +10,12 @@ const route = (match, render) => {
     const url = req.params[0];
     // validation
     if (!urlRegEx.test(url)) return "Invalid Url";
+    // set mime type
+    if (render === previews) {
+      res.set({ "Content-Type": "html" });
+    } else {
+      res.set({ "Content-Type": "image/png" });
+    }
     // render response
     const html = await render(url);
     res.write(html, "binary");
