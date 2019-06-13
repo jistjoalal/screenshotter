@@ -1,5 +1,5 @@
 # npm
 /node_modules
 
-# screenshots dir
-/shots
+# screenshots
+*.png

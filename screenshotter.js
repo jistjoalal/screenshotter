@@ -1,3 +1,4 @@
+const fs = require("fs");
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
@@ -29,6 +30,11 @@ const screenshot = async (url, mobile = false) => {
 };
 
 const makePath = (url, mobile = false) => {
+  // ensure shots dir exists
+  if (!fs.existsSync("./shots")) {
+    fs.mkdirSync("./shots");
+  }
+
   const name = url.split("://")[1].replace(/\//g, "-");
   const dir = "shots/";
   const path = dir + name;
