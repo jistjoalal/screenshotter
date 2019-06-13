@@ -30,18 +30,18 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos
 
-- autocomplete forms off
 - refactor routes
 - add version to API routes
 - markdown/html embed copypasta on preview page
-- save pngs to s3/imgur/etc.?
-- compress screenshots?
 - api route (returns json)
 - save by time
   - archive like wayback machine
 - pass params to puppeteer
   - page size, device, etc.
-- look into nest.js
+- save pngs to s3/imgur/etc.?
+- compress screenshots?
+- look into nest.js?
+- Kaffeine to keep heroku app online?
 
 ## learning
 
