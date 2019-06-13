@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
 const screenshot = async (url, mobile = false) => {
-  console.log(`fetching ${url}...`);
+  console.log(`fetching ${url}${mobile ? " (mobile)" : ""}...`);
 
   // setup page
   const browser = await puppeteer.launch({
@@ -13,7 +13,7 @@ const screenshot = async (url, mobile = false) => {
   try {
     // set viewport
     if (mobile) await page.emulate(iPhone);
-    else await page.setViewport({ width: 850, height: 800 });
+    else await page.setViewport({ width: 850, height: 850 });
 
     // render + screenshot page
     await page.goto(url);

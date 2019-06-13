@@ -36,7 +36,8 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos
 
-- markdown/html embed copypasta on preview page
+- refactor screenshotter to make one request for desktop+mobile?
+- prevent inf. loops (preview > preview > ...)
 - api route (returns json)
 - save by time
   - archive like wayback machine
