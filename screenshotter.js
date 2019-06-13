@@ -25,4 +25,6 @@ const screenshot = async (url, mobile = false) => {
   }
 };
 
-module.exports = { screenshot };
+const screenshotMobile = url => screenshot(url, true);
+
+module.exports = { screenshot, screenshotMobile };

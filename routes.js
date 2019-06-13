@@ -1,37 +1,27 @@
 const express = require("express");
 const router = express.Router();
 
-const { screenshot } = require("./screenshotter");
+const { screenshot, screenshotMobile } = require("./screenshotter");
 const { previews } = require("./previews");
 
+const route = (match, render) => {
+  router.get(match, async (req, res) => {
+    // url param
+    const url = req.params[0];
+    // validation
+    if (!urlRegEx.test(url)) return "Invalid Url";
+    // render response
+    const html = await render(url);
+    res.write(html, "binary");
+    res.end(null, "binary");
+  });
+};
+
+// routes
+route("/previews/*", previews);
+route("/mobile/*", screenshotMobile);
+route("/*", screenshot);
+
 const urlRegEx = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
-
-router.get("/previews/*", async (req, res) => {
-  // url param
-  const url = req.params[0];
-
-  // validate url
-  if (!urlRegEx.test(url)) return res.send("Invalid Url");
-
-  // send screenshots as response
-  const html = previews(url);
-  res.send(html);
-});
-
-router.get("/mobile/*", async (req, res) => {
-  const url = req.params[0];
-  if (!urlRegEx.test(url)) return res.send("Invalid Url");
-  const mobile = await screenshot(url, true);
-  res.write(mobile, "binary");
-  res.end(null, "binary");
-});
-
-router.get("/*", async (req, res) => {
-  const url = req.params[0];
-  if (!urlRegEx.test(url)) return res.send("Invalid Url");
-  const desktop = await screenshot(url);
-  res.write(desktop, "binary");
-  res.end(null, "binary");
-});
 
 module.exports = router;

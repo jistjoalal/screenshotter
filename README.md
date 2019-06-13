@@ -30,7 +30,6 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos
 
-- refactor routes
 - add version to API routes
 - markdown/html embed copypasta on preview page
 - api route (returns json)
