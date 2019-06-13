@@ -15,6 +15,19 @@ A web API for easily screenshotting web pages.
 ![screenshot](https://jist-screenshotter.herokuapp.com/https://jist-screenshotter.herokuapp.com/)
 ```
 
+## Develop
+
+```bash
+git clone https://github.com/jistjoalal/screenshotter
+cd screenshotter
+npm install
+npm start
+```
+
+## Deploy
+
+Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-integration#automatic-deploys) upon pushes to `master` branch.
+
 ## dev notes / todos
 
 - autocomplete forms off
