@@ -1,8 +1,10 @@
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
-const screenshot = async (url, path, mobile = false) => {
+const screenshot = async (url, mobile = false) => {
   console.log(`fetching ${url}...`);
+
+  const path = makePath(url, mobile);
 
   // setup page
   const browser = await puppeteer.launch();
@@ -24,22 +26,12 @@ const screenshot = async (url, path, mobile = false) => {
   return path;
 };
 
-const fetchScreenshots = async url => {
-  // filenames
+const makePath = (url, mobile = false) => {
   const name = url.split("://")[1].replace(/\//g, "-");
   const dir = "shots/";
-  const desktopFile = `${dir + name}.png`;
-  const mobileFile = `${dir + name}.mobile.png`;
-
-  // screenshotting
-  try {
-    const desktop = await screenshot(url, desktopFile);
-    const mobile = await screenshot(url, mobileFile, true);
-    console.log(`saved ${desktopFile}, ${mobileFile}`);
-    return { desktop, mobile };
-  } catch (err) {
-    console.log(err);
-  }
+  const path = dir + name;
+  const suffix = mobile ? ".mobile" : "";
+  return `${path}${suffix}.png`;
 };
 
-module.exports = { fetchScreenshots };
+module.exports = { screenshot };
