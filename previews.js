@@ -18,9 +18,9 @@ const container = children =>
     ${children}
   </div>`;
 
-const previews = (desktop, mobile) => {
-  const desktopLink = preview(desktop, "Desktop");
-  const mobileLink = preview(mobile, "Mobile");
+const previews = url => {
+  const desktopLink = preview(url, "Desktop");
+  const mobileLink = preview("mobile/" + url, "Mobile");
   return container(desktopLink + mobileLink);
 };
 

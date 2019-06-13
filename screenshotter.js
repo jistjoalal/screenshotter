@@ -1,11 +1,8 @@
-const fs = require("fs");
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
 const screenshot = async (url, mobile = false) => {
   console.log(`fetching ${url}...`);
-
-  const path = makePath(url, mobile);
 
   // setup page
   const browser = await puppeteer.launch({
@@ -20,26 +17,12 @@ const screenshot = async (url, mobile = false) => {
 
     // render + screenshot page
     await page.goto(url);
-    await page.screenshot({ path });
+    const shot = await page.screenshot();
     await browser.close();
+    return shot;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
-
-  return path;
-};
-
-const makePath = (url, mobile = false) => {
-  // ensure shots dir exists
-  if (!fs.existsSync("./shots")) {
-    fs.mkdirSync("./shots");
-  }
-
-  const name = url.split("://")[1].replace(/\//g, "-");
-  const dir = "shots/";
-  const path = dir + name;
-  const suffix = mobile ? ".mobile" : "";
-  return `${path}${suffix}.png`;
 };
 
 module.exports = { screenshot };

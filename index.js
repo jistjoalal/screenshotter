@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // static
 app.use(express.static(__dirname + "/public"));
-app.use("/shots", express.static(__dirname + "/shots"));
 
 // routes
 const routes = require("./routes");

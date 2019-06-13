@@ -14,9 +14,7 @@ router.get("/previews/*", async (req, res) => {
   if (!urlRegEx.test(url)) return res.send("Invalid Url");
 
   // send screenshots as response
-  const desktop = await screenshot(url);
-  const mobile = await screenshot(url, true);
-  const html = previews(desktop, mobile);
+  const html = previews(url);
   res.send(html);
 });
 
@@ -24,14 +22,16 @@ router.get("/mobile/*", async (req, res) => {
   const url = req.params[0];
   if (!urlRegEx.test(url)) return res.send("Invalid Url");
   const mobile = await screenshot(url, true);
-  res.redirect("/" + mobile);
+  res.write(mobile, "binary");
+  res.end(null, "binary");
 });
 
 router.get("/*", async (req, res) => {
   const url = req.params[0];
   if (!urlRegEx.test(url)) return res.send("Invalid Url");
   const desktop = await screenshot(url);
-  res.redirect("/" + desktop);
+  res.write(desktop, "binary");
+  res.end(null, "binary");
 });
 
 module.exports = router;
