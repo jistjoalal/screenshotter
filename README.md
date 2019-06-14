@@ -12,7 +12,7 @@ A web API for easily screenshotting web pages.
 - This screenshot is automatically **live-generated** using the API. Meta!
 
 ```
-![screenshot](https://jist-screenshotter.herokuapp.com/https://jist-screenshotter.herokuapp.com/)
+![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/
 ```
 
 - Don't want me screwing up your links? Use the versioned API in case I make breaking changes:
@@ -46,6 +46,9 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
   - allow a waiting period for data to load?
 - api preview route (returns json)
 - ssr route
+- pdf route
+- google search bot route
+- page metrics / lighthouse report
 - isolate front-end
   - customizable embed tags + urls
     - w/ inputs (use link, size, alt, etc.)
