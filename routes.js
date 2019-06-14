@@ -1,33 +1,45 @@
 const express = require("express");
-const router = express.Router();
+const { URL } = require("url");
 
-const { screenshot, screenshotMobile } = require("./screenshotter");
+const { desktop, mobile } = require("./screenshotter");
 const { previews } = require("./previews");
 
-const route = (match, render) => {
+const router = express.Router();
+
+const MAX_INCEPTION = 2;
+
+const route = async (match, render) => {
   router.get(match, async (req, res) => {
-    // url param
-    const url = req.params[0];
-    // validation
-    if (!urlRegEx.test(url)) return "Invalid Url";
-    // set mime type
-    if (render === previews) {
-      res.set({ "Content-Type": "html" });
-    } else {
-      res.set({ "Content-Type": "image/png" });
+    try {
+      // validation
+      const url = new URL(req.params[0]);
+      // prevent inception
+      const inceptionLevel = (url.href.match(new RegExp(`${ROOT}`, "g")) || [])
+        .length;
+      if (inceptionLevel > MAX_INCEPTION) throw "Inception Level Exceeded";
+
+      await render(url, res);
+      //
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ error });
     }
-    // render response
-    const html = await render(url);
-    res.write(html, "binary");
-    res.end(null, "binary");
   });
 };
 
-// routes
-route("/previews/*", previews);
-route("/mobile/*", screenshotMobile);
-route("/*", screenshot);
+route("/desktop/*", async (url, res) => {
+  const png = await desktop(url);
+  res.type("image/png").send(png);
+});
 
-const urlRegEx = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+route("/mobile/*", async (url, res) => {
+  const png = await mobile(url);
+  res.type("image/png").send(png);
+});
+
+route("/previews/*", async (url, res) => {
+  const html = await previews(url);
+  res.send(html);
+});
 
 module.exports = router;

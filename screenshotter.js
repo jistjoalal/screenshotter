@@ -1,30 +1,41 @@
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
-const screenshot = async (url, mobile = false) => {
-  console.log(`fetching ${url}${mobile ? " (mobile)" : ""}...`);
-
-  // setup page
-  const browser = await puppeteer.launch({
+// initialize puppeteer
+(async () => {
+  global.browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
   });
-  const page = await browser.newPage();
+})();
+
+const screenshot = async (url, pageSetup) => {
+  console.log(`fetching ${url}...`);
 
   try {
-    // set viewport
-    if (mobile) await page.emulate(iPhone);
-    else await page.setViewport({ width: 850, height: 850 });
+    const page = await browser.newPage();
 
-    // render + screenshot page
+    await pageSetup(page);
+
     await page.goto(url);
     const shot = await page.screenshot();
-    await browser.close();
+    await page.close();
+
     return shot;
   } catch (err) {
-    throw err;
+    console.log(err);
+    return err;
   }
 };
 
-const screenshotMobile = url => screenshot(url, true);
+const desktopSetup = async page => {
+  await page.setViewport({ width: 850, height: 850, deviceScaleFactor: 2 });
+};
 
-module.exports = { screenshot, screenshotMobile };
+const mobileSetup = async page => {
+  await page.emulate(iPhone);
+};
+
+const desktop = async url => await screenshot(url, desktopSetup);
+const mobile = async url => await screenshot(url, mobileSetup);
+
+module.exports = { desktop, mobile };

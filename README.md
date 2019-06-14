@@ -36,13 +36,15 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos
 
-- refactor screenshotter to make one request for desktop+mobile?
-- prevent inf. loops (preview > preview > ...)
+- preview page looks weird when you preview it
 - api route (returns json)
+- customize embed tags w/ inputs (use link, size, alt, etc.)
 - save by time
   - archive like wayback machine
 - pass params to puppeteer
   - page size, device, etc.
+  - allow a waiting period for data to load?
+- isolate front/back-end
 - save pngs to s3/imgur/etc.?
 - compress screenshots?
 - look into nest.js?

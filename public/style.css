@@ -80,8 +80,6 @@ button:hover {
 }
 
 .preview > img {
-  border: 1px solid black;
   width: 250px;
   margin: 12px;
-  padding: 8px;
 }

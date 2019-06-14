@@ -1,8 +1,6 @@
-const root = "https://jist-screenshotter.herokuapp.com";
-
 const previews = url => {
-  const desktopLink = preview(url, "Desktop");
-  const mobileLink = preview("mobile/" + url, "Mobile");
+  const desktopLink = preview("/desktop/" + url, "Desktop");
+  const mobileLink = preview("/mobile/" + url, "Mobile");
   return container(desktopLink + mobileLink);
 };
 
@@ -23,22 +21,22 @@ const preview = (url, text) => `
 const embedMarkdown = url => `
   <p>Markdown</p>
   <code>
-    [![Loading...](${root}/${url})](${url})
+    ![Screenshot](${ROOT}${url})
   </code>
 `;
 
 const embedHtml = url => `
   <p>HTML</p>
   <code>
-    &lt;img src="https://jist-screenshotter.herokuapp.com/${url}" alt="Loading..." /&gt;
+    &lt;img src="${ROOT}${url}" alt="Screenshot" /&gt;
   </code>
 `;
 
 const previewImg = url => `
-  <a href="/${url}" class="preview"> 
+  <a href="${url}" class="preview"> 
     <img
       alt="Loading..."
-      src="/${url}"
+      src="${url}"
     />
   </a>
 `;

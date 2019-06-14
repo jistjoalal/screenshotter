@@ -1,6 +1,6 @@
 document.body.onload = () => {
   const desktop = document.querySelector("#desktop");
-  desktop.addEventListener("submit", submit("/"));
+  desktop.addEventListener("submit", submit("/desktop/"));
 
   const mobile = document.querySelector("#mobile");
   mobile.addEventListener("submit", submit("/mobile/"));
