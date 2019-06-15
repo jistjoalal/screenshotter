@@ -1,8 +1,12 @@
+/* Reset */
+
 body {
   margin: 0;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Layout */
 
 .container {
   max-width: 750px;
@@ -20,10 +24,7 @@ header {
   align-items: center;
 }
 
-section {
-  display: flex;
-  justify-content: space-between;
-}
+/* Styles */
 
 hr {
   border: 0;
@@ -52,12 +53,11 @@ a:hover {
 }
 
 code {
-  display: block;
   margin: 16px 0;
   padding: 8px;
   background: #ddd;
-  text-overflow: clip;
-  overflow: auto;
+  display: block;
+  word-wrap: break-word;
 }
 
 button {
@@ -71,7 +71,17 @@ button:hover {
   background: #ccc;
 }
 
+/* Preview Page */
+
 .preview {
+  display: flex;
+}
+
+.preview__info {
+  max-width: 400px;
+}
+
+.preview__img {
   min-width: 295px;
   min-height: 295px;
   display: flex;
@@ -79,7 +89,28 @@ button:hover {
   align-items: center;
 }
 
-.preview > img {
+.preview__img > img {
   width: 250px;
+  min-height: 250px;
   margin: 12px;
+  border: 1px solid #333;
+}
+
+/* Loading Spinner */
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  position: absolute;
+  z-index: -1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner 0.6s linear infinite;
 }

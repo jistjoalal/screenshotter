@@ -7,6 +7,15 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Screenshotter</title>
+
+    <!-- auto-refresh in development -->
+    <script>
+      if (window.location.hostname === "localhost") {
+        const livejs = document.createElement("script");
+        livejs.src = "http://livejs.com/live.js";
+        document.head.appendChild(livejs);
+      }
+    </script>
   </head>
 
   <body>
@@ -32,26 +41,36 @@
     </header>
 
     <main class="container">
-      <h2>Desktop Screenshot</h2>
-      <code>/desktop/:url</code>
-      <form id="desktop">
-        <input type="url" name="url" placeholder="URL" autocomplete="off" />
-        <button type="submit">Generate</button>
-      </form>
+      <section>
+        <h2>Screenshot Previews</h2>
+        <ul>
+          <li>Desktop + Mobile</li>
+          <li>Markdown + HTML embed tags</li>
+        </ul>
+        <code>/previews/:url</code>
+        <form id="previews">
+          <input type="url" name="url" placeholder="URL" autocomplete="off" />
+          <button type="submit">Generate</button>
+        </form>
+      </section>
 
-      <h2>Mobile Screenshot</h2>
-      <code>/mobile/:url</code>
-      <form id="mobile">
-        <input type="url" name="url" placeholder="URL" autocomplete="off" />
-        <button type="submit">Generate</button>
-      </form>
+      <section>
+        <h2>Desktop Screenshot</h2>
+        <code>/desktop/:url</code>
+        <form id="desktop">
+          <input type="url" name="url" placeholder="URL" autocomplete="off" />
+          <button type="submit">Generate</button>
+        </form>
+      </section>
 
-      <h2>Screenshot Previews</h2>
-      <code>/previews/:url</code>
-      <form id="previews">
-        <input type="url" name="url" placeholder="URL" autocomplete="off" />
-        <button type="submit">Generate</button>
-      </form>
+      <section>
+        <h2>Mobile Screenshot</h2>
+        <code>/mobile/:url</code>
+        <form id="mobile">
+          <input type="url" name="url" placeholder="URL" autocomplete="off" />
+          <button type="submit">Generate</button>
+        </form>
+      </section>
     </main>
 
     <script src="main.js"></script>

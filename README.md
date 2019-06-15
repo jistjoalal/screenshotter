@@ -37,8 +37,9 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos / ideas
 
-- leave a note about inception limit
 - preview page looks weird when you preview it
+- can't handle urls w/ params, grab url differently
+  - (req.url + regex validation?)
 - enable experimental modules syntax
 - howto force github no-cache?
   - set Cache-Control header max-age

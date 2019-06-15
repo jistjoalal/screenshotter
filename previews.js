@@ -7,8 +7,8 @@ const previews = url => {
 const preview = (url, text) => `
   <hr />
 
-  <div style="display: flex;">
-    <div>
+  <div class="preview">
+    <div class="preview__info">
       <h1>${text}</h1>
       ${embedMarkdown(url)}
       ${embedHtml(url)}
@@ -33,11 +33,9 @@ const embedHtml = url => `
 `;
 
 const previewImg = url => `
-  <a href="${url}" class="preview"> 
-    <img
-      alt="Loading..."
-      src="${url}"
-    />
+  <a href="${url}" class="preview__img"> 
+    <img src="${url}" />
+    <span class="spinner"></span>
   </a>
 `;
 
