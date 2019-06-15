@@ -37,7 +37,6 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos / ideas
 
-- preview page looks weird when you preview it
 - can't handle urls w/ params, grab url differently
   - (req.url + regex validation?)
 - enable experimental modules syntax
