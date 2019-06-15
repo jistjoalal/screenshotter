@@ -37,11 +37,10 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos / ideas
 
-- can't handle urls w/ params, grab url differently
-  - (req.url + regex validation?)
 - enable experimental modules syntax
 - howto force github no-cache?
   - set Cache-Control header max-age
+- tests!
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?

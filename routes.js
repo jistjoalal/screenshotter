@@ -1,23 +1,32 @@
 const express = require("express");
-const { URL } = require("url");
 
 const { desktop, mobile } = require("./screenshotter");
 const { previews } = require("./previews");
 
+const MAX_INCEPTION = 2;
+const URL_REGEX = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+
 const router = express.Router();
 
-const MAX_INCEPTION = 2;
+const validateUrl = path => {
+  // parse
+  const splitIdx = path.slice(1).indexOf("/");
+  const url = path.slice(splitIdx + 2);
+  // validate
+  if (!URL_REGEX.test(url)) {
+    throw "Invalid URL";
+  }
+  // prevent
+  const inceptionLevel = (url.match(new RegExp(`${ROOT}`, "g")) || []).length;
+  if (inceptionLevel > MAX_INCEPTION) throw "Inception Level Exceeded";
+  return url;
+};
 
 const route = async (match, render) => {
   router.get(match, async (req, res) => {
     try {
       // validation
-      const url = new URL(req.params[0]);
-      // prevent inception
-      const inceptionLevel = (url.href.match(new RegExp(`${ROOT}`, "g")) || [])
-        .length;
-      if (inceptionLevel > MAX_INCEPTION) throw "Inception Level Exceeded";
-
+      const url = validateUrl(req.url);
       await render(url, res);
       //
     } catch (error) {
