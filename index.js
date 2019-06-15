@@ -15,5 +15,5 @@ app.use("/v1", routes);
 app.use("/", routes);
 
 app.listen(PORT, () => {
-  console.log(`App running @ ${ROOT}:${PORT}...`);
+  console.log(`App running @ ${ROOT}...`);
 });

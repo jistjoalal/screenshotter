@@ -3,7 +3,8 @@
 A web API for easily screenshotting web pages.
 
 - **Built with**: [Express](https://expressjs.com/) + [Puppeteer](https://github.com/GoogleChrome/puppeteer)
-- **Built by**: a lazy programmer who's tired of updating readme screenshots.
+- **Built by**: a lazy web developer who's tired of updating readme screenshots.
+- **Built like**: the now obsolete(?) [Puppeteer as a service](https://github.com/GoogleChromeLabs/pptraas.com) app built by [Eric Bidelman](https://github.com/ebidel). Check out his [talk](https://www.youtube.com/watch?v=lhZOFUY1weo) @ Google I/O '18 to see how cool Puppeteer is!
 
 ## Demo
 
@@ -48,7 +49,7 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 - ssr route
 - pdf route
 - google search bot route
-- page metrics / lighthouse report
+- page metrics / lighthouse report route
 - isolate front-end
   - customizable embed tags + urls
     - w/ inputs (use link, size, alt, etc.)

@@ -16,7 +16,7 @@ const screenshot = async (url, pageSetup) => {
 
     await pageSetup(page);
 
-    await page.goto(url);
+    await page.goto(url, { waitUntil: "networkidle0" });
     const shot = await page.screenshot();
     await page.close();
 
