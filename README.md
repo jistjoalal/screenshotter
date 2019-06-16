@@ -8,7 +8,7 @@ A web API for easily screenshotting web pages.
 
 ## Demo
 
-<img src="https://jist-screenshotter.herokuapp.com/mobile/https://jist-screenshotter.herokuapp.com/" width="300" />
+<img src="https://jist-screenshotter.herokuapp.com/v1/desktop/https://jist-screenshotter.herokuapp.com/" alt="Screenshot" width="500" />
 
 - This screenshot is automatically **live-generated** using the API. Meta!
 
