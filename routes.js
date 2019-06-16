@@ -3,8 +3,11 @@ const express = require("express");
 const { desktop, mobile } = require("./screenshotter");
 const { previews } = require("./previews");
 
+// max level of self reference allowed
 const MAX_INCEPTION = 2;
 const URL_REGEX = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+// time to cache in seconds
+const CACHE_MAX_AGE = "86400";
 
 const router = express.Router();
 
@@ -27,6 +30,7 @@ const route = async (match, render) => {
     try {
       // validation
       const url = validateUrl(req.url);
+      res.setHeader("Cache-Control", `max-age=${CACHE_MAX_AGE}`);
       await render(url, res);
       //
     } catch (error) {

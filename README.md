@@ -10,6 +10,8 @@ A web API for easily screenshotting web pages.
 
 [![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/)](https://jist-screenshotter.herokuapp.com/)
 
+<img src="https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/" alt="Screenshot" />
+
 - This screenshot is automatically **live-generated** using the API. Meta!
 
 ```
@@ -37,7 +39,6 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos / ideas
 
-- enable experimental modules syntax
 - howto force github no-cache?
   - set Cache-Control header max-age
 - tests!
