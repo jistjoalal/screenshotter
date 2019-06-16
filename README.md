@@ -10,8 +10,6 @@ A web API for easily screenshotting web pages.
 
 [![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/)](https://jist-screenshotter.herokuapp.com/)
 
-<img src="https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/" alt="Screenshot" />
-
 - This screenshot is automatically **live-generated** using the API. Meta!
 
 ```

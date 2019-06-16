@@ -30,7 +30,8 @@ const route = async (match, render) => {
     try {
       // validation
       const url = validateUrl(req.url);
-      res.setHeader("Cache-Control", `max-age=${CACHE_MAX_AGE}`);
+      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Expires", new Date(Date.now() - 1).toUTCString());
       await render(url, res);
       //
     } catch (error) {
