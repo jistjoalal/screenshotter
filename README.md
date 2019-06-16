@@ -37,9 +37,14 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 ## dev notes / todos / ideas
 
-- howto force github no-cache?
-  - set Cache-Control header max-age
 - tests!
+  - [x] screenshotter
+  - [ ] routes
+  - [ ] express server?
+  - [ ] previews?
+  - [ ] index.html?
+  - [ ] end-to-end?
+  - [ ] hook up CI
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?
