@@ -8,14 +8,12 @@ A web API for easily screenshotting web pages.
 
 ## Demo
 
-[![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/)](https://jist-screenshotter.herokuapp.com/)
-
-![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://google.com/)
+<img src="https://jist-screenshotter.herokuapp.com/mobile/https://jist-screenshotter.herokuapp.com/" width="300" />
 
 - This screenshot is automatically **live-generated** using the API. Meta!
 
 ```
-![Screenshot](https://jist-screenshotter.herokuapp.com/desktop/https://jist-screenshotter.herokuapp.com/
+![Screenshot](https://jist-screenshotter.herokuapp.com/mobile/https://jist-screenshotter.herokuapp.com/
 ```
 
 - Don't want me screwing up your links? Use the versioned API in case I make breaking changes:
