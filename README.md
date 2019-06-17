@@ -58,5 +58,7 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
     - w/ inputs (use link, size, alt, etc.)
 - save by time
   - archive like wayback machine
+  - useful for caching on my end, could send param to refresh
+  - could store on s3/imgur
 - look into nest.js?
 - Kaffeine to keep heroku app online?

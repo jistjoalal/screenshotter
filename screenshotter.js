@@ -1,18 +1,25 @@
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
-const screenshot = async (url, pageSetup) => {
-  try {
-    const browser = await puppeteer.launch({
+let browser = null;
+const initBrowser = async () => {
+  if (!browser) {
+    browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox"]
     });
-    const page = await browser.newPage();
+  }
+  return browser;
+};
 
+const screenshot = async (url, pageSetup) => {
+  try {
+    const browser = await initBrowser();
+    const page = await browser.newPage();
     await pageSetup(page);
 
-    await page.goto(url, { waitUntil: "networkidle0" });
+    await page.goto(url, { waitUntil: "networkidle2" });
     const shot = await page.screenshot();
-    await browser.close();
+    await page.close();
 
     return shot;
   } catch (err) {
