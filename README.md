@@ -44,7 +44,7 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
   - [ ] previews?
   - [ ] index.html?
   - [ ] end-to-end?
-  - [ ] hook up CI
+  - [x] hook up CI
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?
