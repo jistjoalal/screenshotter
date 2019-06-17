@@ -1,12 +1,9 @@
 document.body.onload = () => {
-  const desktop = document.querySelector("#desktop");
-  desktop.addEventListener("submit", submit("/desktop/"));
-
-  const mobile = document.querySelector("#mobile");
-  mobile.addEventListener("submit", submit("/mobile/"));
-
-  const previews = document.querySelector("#previews");
-  previews.addEventListener("submit", submit("/previews/"));
+  const routes = ["desktop", "mobile", "previews", "ssr"];
+  routes.forEach(route => {
+    const form = document.querySelector(`#${route}`);
+    form.addEventListener("submit", submit(`/${route}/`));
+  });
 };
 
 const submit = prefix => e => {

@@ -1,6 +1,7 @@
 const express = require("express");
 
-const { desktop, mobile } = require("./screenshotter");
+const { desktop, mobile } = require("./pptr/screenshotter");
+const { ssr } = require("./pptr/ssr");
 const { previews } = require("./previews");
 
 const { ROOT } = require("./env");
@@ -35,7 +36,7 @@ const route = async (match, render) => {
       await render(url, res);
       //
     } catch (error) {
-      res.status(500).send({ error });
+      res.status(500).send({ error: error.toString() });
     }
   });
 };
@@ -52,6 +53,11 @@ route("/mobile/*", async (url, res) => {
 
 route("/previews/*", async (url, res) => {
   const html = await previews(url);
+  res.send(html);
+});
+
+route("/ssr/*", async (url, res) => {
+  const html = await ssr(url);
   res.send(html);
 });
 

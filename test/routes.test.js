@@ -47,5 +47,6 @@ describe("Routes", () => {
   it("/desktop", routeTest(pngRoute, "/desktop/https://google.com"));
   it("/mobile", routeTest(pngRoute, "/mobile/https://github.com"));
   it("/previews", routeTest(htmlRoute, "/previews/https://reddit.com"));
+  it("/ssr", routeTest(htmlRoute, "/ssr/https://google.com"));
   it("invalid route", routeTest(invalidRoute, "/desktop/invalid"));
 });

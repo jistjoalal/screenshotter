@@ -1,15 +1,7 @@
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices["iPhone 6"];
 
-let browser = null;
-const initBrowser = async () => {
-  if (!browser) {
-    browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disable-setuid-sandbox"]
-    });
-  }
-  return browser;
-};
+const { initBrowser } = require("./browser");
 
 const screenshot = async (url, pageSetup) => {
   try {
@@ -23,7 +15,6 @@ const screenshot = async (url, pageSetup) => {
 
     return shot;
   } catch (err) {
-    console.log(err);
     return err;
   }
 };
