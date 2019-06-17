@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jistjoalal/screenshotter.svg?branch=master)](https://travis-ci.com/jistjoalal/screenshotter)
+
 # Screenshotter
 
 A web API for easily screenshotting web pages.
