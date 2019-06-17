@@ -39,7 +39,7 @@ Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-int
 
 - tests!
   - [x] screenshotter
-  - [ ] routes
+  - [x] routes
   - [ ] express server?
   - [ ] previews?
   - [ ] index.html?

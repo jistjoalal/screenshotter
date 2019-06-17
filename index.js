@@ -1,6 +1,4 @@
-// ENV
-global.PORT = process.env.PORT || 3001;
-global.ROOT = process.env.ROOT_URL || `http://localhost:${PORT}`;
+const { PORT, ROOT } = require("./env");
 
 // express
 const express = require("express");
