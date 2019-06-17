@@ -1,19 +1,19 @@
 {
   "name": "screenshotter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Web Page Screenshotter",
+  "main": "src/app.js",
   "engines": {
     "node": ">=10.15.3"
   },
   "scripts": {
-    "start": "node index.js",
-    "develop": "nodemon index.js",
+    "start": "node src/app.js",
+    "develop": "nodemon src/app.js",
     "test": "mocha --watch",
     "test:prod": "mocha --exit"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jist",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^1.17.0"

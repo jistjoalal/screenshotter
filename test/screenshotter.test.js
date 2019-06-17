@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const { desktop, mobile } = require("../screenshotter");
+const { desktop, mobile } = require("../src/screenshotter");
 
 describe("Screenshotter", () => {
   describe("Desktop Screenshot", () => {

@@ -2,7 +2,7 @@ const express = require("express");
 const request = require("supertest");
 const { expect } = require("chai");
 
-const routes = require("../routes");
+const routes = require("../src/routes");
 
 const app = express();
 app.use("/", routes);

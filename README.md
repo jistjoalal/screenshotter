@@ -8,20 +8,12 @@ A web API for easily screenshotting web pages.
 - **Built by**: a lazy web developer who's tired of updating readme screenshots.
 - **Built like**: the now obsolete(?) [Puppeteer as a service](https://github.com/GoogleChromeLabs/pptraas.com) app built by [Eric Bidelman](https://github.com/ebidel). Check out his [talk](https://www.youtube.com/watch?v=lhZOFUY1weo) @ Google I/O '18 to see how cool Puppeteer is!
 
-## Demo
-
 [<img src="https://jist-screenshotter.herokuapp.com/v1/desktop/https://jist-screenshotter.herokuapp.com/" alt="Screenshot" width="500" />](https://jist-screenshotter.herokuapp.com/)
 
 - This screenshot is automatically **live-generated** using the API. Meta!
 
 ```
 ![Screenshot](https://jist-screenshotter.herokuapp.com/mobile/https://jist-screenshotter.herokuapp.com/
-```
-
-- Don't want me screwing up your links? Use the versioned API in case I make breaking changes:
-
-```
-https://jist-screenshotter.herokuapp.com/v1/
 ```
 
 ## Develop
@@ -33,20 +25,20 @@ npm install
 npm run develop
 ```
 
+## Tests
+
+```bash
+npm test
+```
+
 ## Deploy
 
-Automatic deploys with [Heroku](https://devcenter.heroku.com/articles/github-integration#automatic-deploys) upon pushes to `master` branch.
+Continuous Integration with [Heroku](https://devcenter.heroku.com/articles/github-integration#automatic-deploys) and [Travis-CI](https://travis-ci.com).
+
+- Deployments happen automatically upon successful builds in the staging environment.
 
 ## dev notes / todos / ideas
 
-- tests!
-  - [x] screenshotter
-  - [x] routes
-  - [ ] express server?
-  - [ ] previews?
-  - [ ] index.html?
-  - [ ] end-to-end?
-  - [x] hook up CI
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?
