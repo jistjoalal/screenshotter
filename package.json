@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "develop": "nodemon index.js",
-    "test": "mocha --watch"
+    "test": "mocha --watch",
+    "test:prod": "mocha --exit"
   },
   "author": "",
   "license": "ISC",
