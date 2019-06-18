@@ -3,6 +3,8 @@ const express = require("express");
 const { desktop, mobile } = require("./pptr/screenshotter");
 const { ssr } = require("./pptr/ssr");
 const { pdf } = require("./pptr/pdf");
+const { metrics } = require("./pptr/metrics");
+
 const { previews } = require("./previews");
 
 const { ROOT } = require("./env");
@@ -65,6 +67,11 @@ route("/ssr/*", async (url, res) => {
 route("/pdf/*", async (url, res) => {
   const result = await pdf(url);
   res.type("application/pdf").send(result);
+});
+
+route("/metrics/*", async (url, res) => {
+  const result = await metrics(url);
+  res.type("application/json").send(JSON.stringify(result));
 });
 
 module.exports = router;

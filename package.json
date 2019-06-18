@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node src/app.js",
     "develop": "nodemon src/app.js",
-    "test": "mocha --watch",
+    "test": "nodemon --exec mocha",
     "test:prod": "mocha --exit"
   },
   "author": "Jist",
