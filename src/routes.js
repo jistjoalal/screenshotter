@@ -4,6 +4,7 @@ const { desktop, mobile } = require("./pptr/screenshotter");
 const { ssr } = require("./pptr/ssr");
 const { pdf } = require("./pptr/pdf");
 const { metrics } = require("./pptr/metrics");
+const { lighthouseReport } = require("./pptr/lighthouse");
 
 const { previews } = require("./previews");
 
@@ -72,6 +73,11 @@ route("/pdf/*", async (url, res) => {
 route("/metrics/*", async (url, res) => {
   const result = await metrics(url);
   res.type("application/json").send(JSON.stringify(result));
+});
+
+route("/lighthouse/*", async (url, res) => {
+  const html = await lighthouseReport(url);
+  res.send(html);
 });
 
 module.exports = router;

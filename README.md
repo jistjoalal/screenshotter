@@ -45,8 +45,8 @@ Continuous Integration with [Heroku](https://devcenter.heroku.com/articles/githu
   - ^ how to test these? ^
 - [x] pdf route
 - [x] page metrics
+- [x] lighthouse report route
 - [ ] google search bot route
-- [ ] lighthouse report route
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?

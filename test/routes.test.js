@@ -62,6 +62,7 @@ describe("Routes", () => {
   it("/mobile", routeTest(pngRoute, "/mobile/https://github.com"));
   it("/previews", routeTest(htmlRoute, "/previews/https://reddit.com"));
   it("/ssr", routeTest(htmlRoute, "/ssr/https://google.com"));
+  it("/lighthouse", routeTest(htmlRoute, "/lighthouse/https://google.com"));
   it("/pdf", routeTest(pdfRoute, "/pdf/https://google.com"));
   it("/metrics", routeTest(jsonRoute, "/metrics/https://google.com"));
   it("invalid route", routeTest(invalidRoute, "/desktop/invalid"));

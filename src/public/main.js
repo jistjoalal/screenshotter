@@ -1,5 +1,13 @@
 document.body.onload = () => {
-  const routes = ["desktop", "mobile", "previews", "ssr", "pdf", "metrics"];
+  const routes = [
+    "desktop",
+    "mobile",
+    "previews",
+    "ssr",
+    "pdf",
+    "metrics",
+    "lighthouse"
+  ];
   routes.forEach(route => {
     const form = document.querySelector(`#${route}`);
     form.addEventListener("submit", submit(`/${route}/`));
