@@ -16,7 +16,7 @@ const lighthouseReport = async url => {
     await browser.close();
     return result.report;
   } catch (err) {
-    return err;
+    throw err;
   }
 };
 
