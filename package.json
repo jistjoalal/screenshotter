@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Web Page Screenshotter",
   "main": "src/app.js",
-  "engines": {
-    "node": ">=10.15.3"
-  },
   "scripts": {
     "start": "node src/app.js",
     "develop": "nodemon src/app.js",
