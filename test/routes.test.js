@@ -37,6 +37,13 @@ const htmlRoute = res => {
   return res;
 };
 
+const pdfRoute = res => {
+  const { headers, status } = res;
+  expect(headers["content-type"]).to.contain("pdf");
+  expect(status).to.equal(200);
+  return res;
+};
+
 const invalidRoute = res => {
   const { status } = res;
   expect(status).to.equal(500);
@@ -48,5 +55,6 @@ describe("Routes", () => {
   it("/mobile", routeTest(pngRoute, "/mobile/https://github.com"));
   it("/previews", routeTest(htmlRoute, "/previews/https://reddit.com"));
   it("/ssr", routeTest(htmlRoute, "/ssr/https://google.com"));
+  it("/pdf", routeTest(pdfRoute, "/pdf/https://google.com"));
   it("invalid route", routeTest(invalidRoute, "/desktop/invalid"));
 });

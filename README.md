@@ -43,7 +43,7 @@ Continuous Integration with [Heroku](https://devcenter.heroku.com/articles/githu
   - [x] DOM, links, styles rendering properly
   - [ ] get scripts to work
   - ^ how to test these? ^
-- [ ] pdf route
+- [x] pdf route
 - [ ] google search bot route
 - [ ] page metrics / lighthouse report route
 - pass params to puppeteer
