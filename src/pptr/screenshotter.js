@@ -9,7 +9,7 @@ const screenshot = async (url, pageSetup) => {
     const page = await browser.newPage();
     await pageSetup(page);
 
-    await page.goto(url, { waitUntil: "networkidle2" });
+    await page.goto(url, { waitUntil: "networkidle0" });
     const shot = await page.screenshot();
     await page.close();
 

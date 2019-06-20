@@ -4,7 +4,7 @@ const metrics = async url => {
   try {
     const browser = await initBrowser();
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: "networkidle2" });
+    await page.goto(url, { waitUntil: "networkidle0" });
     const result = await page.metrics();
     await page.close();
     return result;
