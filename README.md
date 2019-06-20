@@ -39,14 +39,6 @@ Continuous Integration with [Heroku](https://devcenter.heroku.com/articles/githu
 
 ## dev notes / todos / ideas
 
-- [x] SSR route
-  - [x] DOM, links, styles rendering properly
-  - [ ] get scripts to work
-  - ^ how to test these? ^
-- [x] pdf route
-- [x] page metrics
-- [x] lighthouse report route
-- [ ] google search bot route
 - pass params to puppeteer
   - page size, device, etc.
   - allow a waiting period for data to load?
