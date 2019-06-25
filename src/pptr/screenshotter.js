@@ -15,6 +15,7 @@ const screenshot = async (url, pageSetup) => {
 
     return shot;
   } catch (err) {
+    console.error(err);
     return err;
   }
 };
